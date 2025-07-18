@@ -1,0 +1,248 @@
+/* Stile generale del sito */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #eaeaea;
+  color: #333333;
+  margin: 0;
+  padding: 0;
+  font-size: 1rem;
+  line-height: 1.6;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  min-height: 100vh;
+  scroll-behavior: smooth;
+}
+
+/* Header */
+header {
+  text-align: center;
+  padding: 2rem 1rem;
+  background-color: #f9f9f9;
+  width: 100%;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+header h1 {
+  margin: 0 0 0.5rem 0;
+  font-size: 2rem;
+  color: #2a2a2a;
+}
+
+.telefono-evidenziato {
+  color: #007bff;
+  font-weight: bold;
+}
+
+/* Sezione AUTO */
+.sezione-auto {
+  position: relative; /* Importante per posizionare le frecce assolutamente */
+  background-color: #f2f2f2;
+  padding: 5% 2%;
+  text-align: center;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.sezione-auto h2 {
+  font-size: 1.6rem;
+  color: #2a2a2a;
+  margin-bottom: 3%;
+}
+
+/* Carosello */
+.carousel-auto {
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  gap: 20px;
+  padding: 10px 60px; /* spazio a sinistra/destra per le frecce */
+  scroll-snap-type: x mandatory;
+}
+
+.carousel-auto::-webkit-scrollbar {
+  display: none; /* nasconde scrollbar */
+}
+
+/* Card auto */
+.card-auto {
+  flex: 0 0 auto;
+  width: 280px;
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 1.5rem 1rem;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+  text-align: center;
+  scroll-snap-align: start; /* per scroll snap */
+}
+
+.card-auto h3 {
+  font-size: 1.3rem;
+  color: #2a2a2a;
+  margin-bottom: 1rem;
+}
+
+.card-auto img {
+  width: 100%;
+  height: auto;
+  max-height: 150px;
+  object-fit: cover;
+  border-radius: 6px;
+  margin-bottom: 1rem;
+  transition: transform 0.3s ease;
+}
+
+.card-auto img:hover {
+  transform: scale(1.05);
+}
+
+.card-auto p {
+  font-size: 1rem;
+  color: #555555;
+  margin-top: 0.8rem;
+}
+
+/* Pallini colore */
+.swatches {
+  margin-top: 0.5rem;
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.swatch {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  cursor: pointer;
+  border: 2px solid #007bff;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+  transition: transform 0.2s ease;
+}
+
+.swatch:hover {
+  transform: scale(1.1);
+}
+
+/* Frecce carosello */
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0,0,0,0.5);
+  border: none;
+  color: white;
+  font-size: 30px;
+  cursor: pointer;
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  user-select: none;
+  transition: background-color 0.3s ease;
+  z-index: 10;
+}
+
+.carousel-btn:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+.carousel-btn.prev {
+  left: 10px;
+}
+
+.carousel-btn.next {
+  right: 10px;
+}
+
+/* Sezione MAPPA */
+.sezione-mappa {
+  background-color: #f2f2f2;
+  padding: 5% 2%;
+  text-align: center;
+  border-top: 2px solid #cccccc;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.sezione-mappa h2 {
+  font-size: 1.8rem;
+  color: #2a2a2a;
+  margin-bottom: 2%;
+}
+
+.sezione-mappa p {
+  font-size: 1.2rem;
+  color: #444444;
+  margin-bottom: 2.5rem;
+}
+
+.contenitore-mappa {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.contenitore-mappa iframe {
+  width: 600px;
+  height: 450px;
+  border: 0;
+  border-radius: 10px;
+}
+
+/* Responsive Design */
+@media (max-width: 700px) {
+  .contenitore-mappa iframe {
+    width: 100%;
+    height: 300px;
+  }
+
+  .carousel-auto {
+    padding: 1rem;
+  }
+
+  .card-auto {
+    width: 85%;
+  }
+
+  .sezione-auto h2 {
+    font-size: 1.4rem;
+  }
+
+  .sezione-mappa h2 {
+    font-size: 1.6rem;
+  }
+
+  .sezione-mappa p {
+    font-size: 1rem;
+  }
+}
+
+/* Footer */
+.footer {
+  background-color: #d9d9d9;
+  color: #333333;
+  padding: 5% 2%;
+  text-align: center;
+  border-top: 2px solid #cccccc;
+  margin-top: 5rem;
+  width: 100%;
+}
+
+.footer a {
+  color: #000000;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.footer a:hover {
+  text-decoration: underline;
+}
+
+.footer-content p {
+  margin: 1rem 0;
+  font-size: 1rem;
+}
